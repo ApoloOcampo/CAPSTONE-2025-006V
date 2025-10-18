@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://deae1a1s0uonj"]
+[gd_scene load_steps=34 format=3 uid="uid://deae1a1s0uonj"]
 
 [ext_resource type="Script" uid="uid://dcfaubnifx3aw" path="res://scripts/player.gd" id="1_kkt6c"]
 [ext_resource type="Texture2D" uid="uid://idavnp5rqunh" path="res://player/imagen/runpj.png" id="2_j7xnp"]
@@ -245,6 +245,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kc3iu"]
 size = Vector2(14, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkt6c"]
+size = Vector2(15, 22)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kkt6c")
 
@@ -261,3 +264,9 @@ shape = SubResource("RectangleShape2D_kc3iu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(164, 88)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(164.5, 85)
+shape = SubResource("RectangleShape2D_kkt6c")
